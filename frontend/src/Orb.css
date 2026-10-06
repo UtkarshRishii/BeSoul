@@ -1,0 +1,94 @@
+.soul-orb {
+  --orb-tint: 151, 184, 255;
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  z-index: 1;
+  width: clamp(240px, 37vmin, 420px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.soul-orb--listening { --orb-tint: 153, 218, 231; }
+.soul-orb--thinking { --orb-tint: 184, 163, 247; }
+.soul-orb--speaking { --orb-tint: 165, 197, 255; }
+
+.soul-orb__aura {
+  position: absolute;
+  inset: -22%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--orb-tint), 0.13) 0%, rgba(var(--orb-tint), 0.045) 38%, transparent 65%);
+  transition: opacity 900ms ease, background 900ms ease;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.soul-orb--listening .soul-orb__aura,
+.soul-orb--speaking .soul-orb__aura { opacity: 1; }
+
+.soul-orb__surface { position: absolute; inset: 0; }
+.soul-orb__surface canvas { display: block; }
+
+.soul-orb__shadow {
+  position: absolute;
+  width: 62%;
+  height: 8%;
+  left: 19%;
+  bottom: 4%;
+  background: radial-gradient(ellipse, rgba(5, 9, 22, 0.5), transparent 70%);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.soul-orb__state-ring {
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  top: 14%;
+  left: 14%;
+  border: 1px solid rgba(var(--orb-tint), 0.15);
+  border-radius: 50%;
+  transform: scale(1.12);
+  opacity: 0;
+  transition: opacity 700ms ease;
+  pointer-events: none;
+}
+
+.soul-orb--listening .soul-orb__state-ring { opacity: 1; }
+.soul-orb--thinking .soul-orb__state-ring {
+  opacity: 0.8;
+  border-color: rgba(var(--orb-tint), 0.06);
+  border-top-color: rgba(var(--orb-tint), 0.6);
+  border-right-color: rgba(var(--orb-tint), 0.24);
+  animation: soul-orb-thought 9s linear infinite;
+}
+
+.soul-orb__fallback {
+  display: block;
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 29% 22%, rgba(239, 247, 255, 0.85), transparent 20%),
+    radial-gradient(ellipse at 72% 72%, rgba(163, 137, 227, 0.7), transparent 50%),
+    radial-gradient(ellipse at 43% 45%, #88a9ea, #4566a0 47%, #1d345a 75%, #abc7f3 99%);
+  box-shadow: inset 0 0 24px rgba(200, 220, 255, 0.25), 0 0 34px rgba(var(--orb-tint), 0.08);
+}
+
+.soul-orb--still .soul-orb__state-ring { animation: none; }
+
+@keyframes soul-orb-thought {
+  from { transform: scale(1.12) rotate(0deg); }
+  to { transform: scale(1.12) rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .soul-orb { top: 32%; width: min(44vw, 310px); min-width: 210px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soul-orb__state-ring { animation: none; }
+}

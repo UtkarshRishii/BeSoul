@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Soul">
+  <defs>
+    <linearGradient id="tile" x2="1" y2="1">
+      <stop stop-color="#243956"/><stop offset="1" stop-color="#121e35"/>
+    </linearGradient>
+    <radialGradient id="sphere" cx=".34" cy=".27" r=".8">
+      <stop stop-color="#e9f4ff"/><stop offset=".24" stop-color="#acd2fc"/>
+      <stop offset=".55" stop-color="#7c91d7"/><stop offset=".8" stop-color="#4b558e"/>
+      <stop offset="1" stop-color="#b4b9ef"/>
+    </radialGradient>
+    <radialGradient id="shine" cx=".3" cy=".22" r=".68">
+      <stop stop-color="#fff" stop-opacity=".55"/><stop offset=".34" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#eefbff" stop-opacity=".75"/><stop offset=".55" stop-color="#dde8ff" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#d6bdff" stop-opacity=".72"/>
+    </linearGradient>
+    <clipPath id="orb"><circle cx="128" cy="128" r="76"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="254" height="254" rx="66" fill="url(#tile)" stroke="#b6cbed" stroke-opacity=".18" stroke-width="2"/>
+  <ellipse cx="132" cy="210" rx="64" ry="11" fill="#080f21" fill-opacity=".42"/>
+  <circle cx="128" cy="128" r="88" fill="none" stroke="#a1baf0" stroke-opacity=".1" stroke-width="2"/>
+  <circle cx="128" cy="128" r="76" fill="url(#sphere)"/>
+  <g clip-path="url(#orb)">
+    <path d="M36 159C83 197 170 50 217 87" fill="none" stroke="url(#ribbon)" stroke-width="15"/>
+    <path d="M38 162C85 200 172 53 219 90" fill="none" stroke="#f2f8ff" stroke-opacity=".3" stroke-width="2"/>
+    <circle cx="128" cy="128" r="76" fill="url(#shine)"/>
+  </g>
+  <circle cx="128" cy="128" r="75" fill="none" stroke="#d9e9ff" stroke-opacity=".28" stroke-width="2"/>
+  <ellipse cx="101" cy="80" rx="17" ry="7" transform="rotate(-24 101 80)" fill="#f8fdff" fill-opacity=".43"/>
+</svg>

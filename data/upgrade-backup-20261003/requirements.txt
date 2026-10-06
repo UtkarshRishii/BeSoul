@@ -1,0 +1,14 @@
+google-genai>=1.0,<2
+pydantic-settings>=2.7,<3
+rich>=13.9,<15
+sounddevice>=0.5,<1
+numpy>=1.26,<3
+pytest>=8,<10
+pytest-asyncio>=0.25,<2
+psutil>=6,<8
+pywin32>=308; sys_platform == "win32"
+pycaw>=20240210; sys_platform == "win32"
+mss>=10,<11
+Pillow>=11,<13
+yt-dlp>=2025.1
+prompt-toolkit>=3.0.50,<4
